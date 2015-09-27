@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,32 +20,64 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95e-o0-MKh">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="microphone"/>
+                                <connections>
+                                    <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="26v-dh-gFo"/>
+                                </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recording in progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XtD-mC-jxT">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.55877305343686601" green="0.55891017372227647" blue="0.56399936868686873" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="163" y="458" width="74" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="95e-o0-MKh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0Sh-Pp-ykc"/>
                             <constraint firstItem="95e-o0-MKh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="16w-cJ-xQN"/>
+                            <constraint firstItem="XtD-mC-jxT" firstAttribute="top" secondItem="95e-o0-MKh" secondAttribute="bottom" constant="12" id="LLq-ec-UhA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XtD-mC-jxT" secondAttribute="trailing" constant="143" id="dD5-40-EFq"/>
+                            <constraint firstItem="XtD-mC-jxT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kaE-19-hQa"/>
+                            <constraint firstItem="XtD-mC-jxT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lr4-J0-thf"/>
+                            <constraint firstItem="XtD-mC-jxT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uew-cP-t0M"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="95e-o0-MKh"/>
+                                <exclude reference="XtD-mC-jxT"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="0Sh-Pp-ykc"/>
                                 <exclude reference="16w-cJ-xQN"/>
+                                <exclude reference="LLq-ec-UhA"/>
+                                <exclude reference="dD5-40-EFq"/>
+                                <exclude reference="kaE-19-hQa"/>
+                                <exclude reference="lr4-J0-thf"/>
+                                <exclude reference="uew-cP-t0M"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="95e-o0-MKh"/>
+                                <include reference="XtD-mC-jxT"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="0Sh-Pp-ykc"/>
                                 <include reference="16w-cJ-xQN"/>
+                                <include reference="LLq-ec-UhA"/>
+                                <exclude reference="dD5-40-EFq"/>
+                                <exclude reference="kaE-19-hQa"/>
+                                <exclude reference="lr4-J0-thf"/>
+                                <include reference="uew-cP-t0M"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="recordingLabel" destination="XtD-mC-jxT" id="uvb-ys-xkR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
