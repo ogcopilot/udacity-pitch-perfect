@@ -283,6 +283,7 @@
 				5DB6F9E01BB8334F00B55615 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
