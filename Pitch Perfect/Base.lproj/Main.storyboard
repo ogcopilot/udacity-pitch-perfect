@@ -16,32 +16,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQ5-v2-0aJ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95e-o0-MKh">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Record"/>
+                                <state key="normal" image="microphone"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="XQ5-v2-0aJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HEX-QY-S7r"/>
-                            <constraint firstItem="XQ5-v2-0aJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="raw-pf-pXY"/>
+                            <constraint firstItem="95e-o0-MKh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0Sh-Pp-ykc"/>
+                            <constraint firstItem="95e-o0-MKh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="16w-cJ-xQN"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="XQ5-v2-0aJ"/>
+                                <exclude reference="95e-o0-MKh"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="HEX-QY-S7r"/>
-                                <exclude reference="raw-pf-pXY"/>
+                                <exclude reference="0Sh-Pp-ykc"/>
+                                <exclude reference="16w-cJ-xQN"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="XQ5-v2-0aJ"/>
+                                <include reference="95e-o0-MKh"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="HEX-QY-S7r"/>
-                                <include reference="raw-pf-pXY"/>
+                                <include reference="0Sh-Pp-ykc"/>
+                                <include reference="16w-cJ-xQN"/>
                             </mask>
                         </variation>
                     </view>
@@ -50,4 +50,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="microphone" width="100" height="100"/>
+    </resources>
 </document>
