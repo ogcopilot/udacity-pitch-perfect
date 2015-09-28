@@ -25,20 +25,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func recordAudio(sender: UIButton) {
-        if counter % 2 == 0 {
-            mainAction.setImage(UIImage(named: "stop"), forState: .Normal)
-            recordingLabel.hidden = false
-        }
-        else if counter % 2 == 1 {
-            mainAction.setImage(UIImage(named: "microphone"), forState: .Normal)
-            recordingLabel.hidden = true
-            
-        }
+        mainAction.setImage(UIImage(named: (counter % 2 == 0) ? "stop": "microphone"), forState: .Normal)
+        recordingLabel.hidden = !recordingLabel.hidden
         counter++
         // TODO: record the users voice
-        print("in recordAudio")
+        print("pressed the button \(counter) times")
     }
-
-
 }
 
