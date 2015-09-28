@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var recordingLabel: UILabel!
+    @IBOutlet weak var mainAction: UIButton!
+    
+    var counter: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +25,16 @@ class ViewController: UIViewController {
     }
 
     @IBAction func recordAudio(sender: UIButton) {
-        recordingLabel.hidden = false
+        if counter % 2 == 0 {
+            mainAction.setImage(UIImage(named: "stop"), forState: .Normal)
+            recordingLabel.hidden = false
+        }
+        else if counter % 2 == 1 {
+            mainAction.setImage(UIImage(named: "microphone"), forState: .Normal)
+            recordingLabel.hidden = true
+            
+        }
+        counter++
         // TODO: record the users voice
         print("in recordAudio")
     }
