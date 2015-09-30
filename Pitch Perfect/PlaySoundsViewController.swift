@@ -10,9 +10,22 @@ import UIKit
 import AVFoundation
 
 class PlaySoundsViewController: UIViewController {
+    
+    var player:AVAudioPlayer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        if let path = NSBundle.mainBundle().pathForResource("movie_quote", ofType: "mp3") {
+            let url = NSURL.fileURLWithPath(path)
+            do {
+                try player = AVAudioPlayer(contentsOfURL: url)
+            } catch {
+                print("error in audio initialization")
+            }
+            player.enableRate = true
+        } else {
+            print("error getting path")
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -24,22 +37,11 @@ class PlaySoundsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    var player: AVAudioPlayer! = nil
-    
     @IBAction func slowDownSound(sender: AnyObject) {
         print("in slowDownSound")
-        do {
-            
-        let path = NSBundle.mainBundle().pathForResource("movie_quote", ofType: "mp3")
-        print(path)
-        let url = NSURL.fileURLWithPath(path!)
-        print(url.debugDescription)
-        try player = AVAudioPlayer.init(contentsOfURL: url)
-            player.prepareToPlay()
-            player.play()
-        } catch {
-            print("ERROR")
-        }
+        player.stop()
+        player.rate = 0.5
+        player.play()
     }
 
 }
