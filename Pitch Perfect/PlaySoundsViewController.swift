@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class PlaySoundsViewController: UIViewController {
     override func viewDidLoad() {
@@ -21,6 +22,24 @@ class PlaySoundsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    var player: AVAudioPlayer! = nil
+    
+    @IBAction func slowDownSound(sender: AnyObject) {
+        print("in slowDownSound")
+        do {
+            
+        let path = NSBundle.mainBundle().pathForResource("movie_quote", ofType: "mp3")
+        print(path)
+        let url = NSURL.fileURLWithPath(path!)
+        print(url.debugDescription)
+        try player = AVAudioPlayer.init(contentsOfURL: url)
+            player.prepareToPlay()
+            player.play()
+        } catch {
+            print("ERROR")
+        }
     }
 
 }

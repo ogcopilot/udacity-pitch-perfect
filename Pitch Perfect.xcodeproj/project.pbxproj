@@ -13,6 +13,7 @@
 		5DB6F9D71BB8334F00B55615 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DB6F9D61BB8334F00B55615 /* Assets.xcassets */; };
 		5DB6F9DA1BB8334F00B55615 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DB6F9D81BB8334F00B55615 /* LaunchScreen.storyboard */; };
 		5DBDB13B1BBBA50F008C41EB /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBDB13A1BBBA50F008C41EB /* PlaySoundsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		5DBDB13D1BBBBEB6008C41EB /* movie_quote.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5DBDB13C1BBBBEB6008C41EB /* movie_quote.mp3 */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		5DB6F9D91BB8334F00B55615 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5DB6F9DB1BB8334F00B55615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DBDB13A1BBBA50F008C41EB /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
+		5DBDB13C1BBBBEB6008C41EB /* movie_quote.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = movie_quote.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +42,7 @@
 		5DB6F9C31BB8334F00B55615 = {
 			isa = PBXGroup;
 			children = (
+				5DBDB13E1BBBBECC008C41EB /* Supporting Files */,
 				5DB6F9CE1BB8334F00B55615 /* Pitch Perfect */,
 				5DB6F9CD1BB8334F00B55615 /* Products */,
 			);
@@ -65,6 +68,14 @@
 				5DBDB13A1BBBA50F008C41EB /* PlaySoundsViewController.swift */,
 			);
 			path = "Pitch Perfect";
+			sourceTree = "<group>";
+		};
+		5DBDB13E1BBBBECC008C41EB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5DBDB13C1BBBBEB6008C41EB /* movie_quote.mp3 */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +137,7 @@
 			files = (
 				5DB6F9DA1BB8334F00B55615 /* LaunchScreen.storyboard in Resources */,
 				5DB6F9D71BB8334F00B55615 /* Assets.xcassets in Resources */,
+				5DBDB13D1BBBBEB6008C41EB /* movie_quote.mp3 in Resources */,
 				5DB6F9D51BB8334F00B55615 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
