@@ -83,10 +83,10 @@
             </objects>
             <point key="canvasLocation" x="949.5" y="-109.5"/>
         </scene>
-        <!--Playback View Controller-->
+        <!--Play Sounds View Controller-->
         <scene sceneID="ign-7n-Urt">
             <objects>
-                <viewController storyboardIdentifier="playback" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OKs-c7-YYU" customClass="PlaybackViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="playback" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OKs-c7-YYU" customClass="PlaySoundsViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xo2-RO-6HU"/>
                         <viewControllerLayoutGuide type="bottom" id="n8N-2d-TUY"/>

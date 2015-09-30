@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func recordAudio(sender: UIButton) {
-        let playbackViewControllerObject = self.storyboard?.instantiateViewControllerWithIdentifier("playback") as? PlaybackViewController
+        let playbackViewControllerObject = self.storyboard?.instantiateViewControllerWithIdentifier("playback") as? PlaySoundsViewController
         
         if (counter % 2 == 1) {
             self.navigationController?.pushViewController(playbackViewControllerObject!, animated: true)
