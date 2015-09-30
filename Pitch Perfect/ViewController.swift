@@ -18,6 +18,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = true
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -25,6 +29,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func recordAudio(sender: UIButton) {
+        let playbackViewControllerObject = self.storyboard?.instantiateViewControllerWithIdentifier("playback") as? PlaybackViewController
+        
+        if (counter % 2 == 1) {
+            self.navigationController?.pushViewController(playbackViewControllerObject!, animated: true)
+        }
+        
         mainAction.setImage(UIImage(named: (counter % 2 == 0) ? "stop": "microphone"), forState: .Normal)
         recordingLabel.hidden = !recordingLabel.hidden
         counter++

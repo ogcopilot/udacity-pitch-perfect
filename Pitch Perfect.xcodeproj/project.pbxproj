@@ -12,6 +12,7 @@
 		5DB6F9D51BB8334F00B55615 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DB6F9D31BB8334F00B55615 /* Main.storyboard */; };
 		5DB6F9D71BB8334F00B55615 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DB6F9D61BB8334F00B55615 /* Assets.xcassets */; };
 		5DB6F9DA1BB8334F00B55615 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DB6F9D81BB8334F00B55615 /* LaunchScreen.storyboard */; };
+		5DBDB13B1BBBA50F008C41EB /* PlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBDB13A1BBBA50F008C41EB /* PlaybackViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		5DB6F9D61BB8334F00B55615 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5DB6F9D91BB8334F00B55615 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5DB6F9DB1BB8334F00B55615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DBDB13A1BBBA50F008C41EB /* PlaybackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				5DB6F9D61BB8334F00B55615 /* Assets.xcassets */,
 				5DB6F9D81BB8334F00B55615 /* LaunchScreen.storyboard */,
 				5DB6F9DB1BB8334F00B55615 /* Info.plist */,
+				5DBDB13A1BBBA50F008C41EB /* PlaybackViewController.swift */,
 			);
 			path = "Pitch Perfect";
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DB6F9D21BB8334F00B55615 /* ViewController.swift in Sources */,
+				5DBDB13B1BBBA50F008C41EB /* PlaybackViewController.swift in Sources */,
 				5DB6F9D01BB8334F00B55615 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
