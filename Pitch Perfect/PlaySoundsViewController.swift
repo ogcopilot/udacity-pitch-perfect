@@ -36,20 +36,24 @@ class PlaySoundsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func playWithSpeed(rate: Float) {
+        player.stop()
+        player.currentTime = 0.0
+        player.rate = rate
+        player.play()
+    }
 
     @IBAction func stopPlayback(sender: AnyObject) {
         player.stop()
     }
     
     @IBAction func speedUpSound(sender: AnyObject) {
-        player.stop()
-        player.rate = 2.0
-        player.play()
+        self.playWithSpeed(2.0)
     }
+    
     @IBAction func slowDownSound(sender: AnyObject) {
-        player.stop()
-        player.rate = 0.5
-        player.play()
+        self.playWithSpeed(0.5)
     }
 
 }
