@@ -31,24 +31,16 @@ class RecordSoundsViewController: UIViewController {
     }
     
     func switchToView(viewIdentifier: String) {
-        let playbackViewControllerObject = self.storyboard?.instantiateViewControllerWithIdentifier(viewIdentifier) as? PlaySoundsViewController
+        let playbackViewControllerObject = self.storyboard?.instantiateViewControllerWithIdentifier(viewIdentifier)
         self.navigationController?.pushViewController(playbackViewControllerObject!, animated: true)
     }
     
+    static var recordedAudioPath = NSURL.fileURLWithPathComponents([NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String, "my_audio.wav"])
+    
     func startRecording() {
-        let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-        
-        let currentDateTime = NSDate()
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd-HHmmss"
-        let recordingName = formatter.stringFromDate(currentDateTime) + ".wav"
-        let pathArray = [dirPath, recordingName]
-        let filePath = NSURL.fileURLWithPathComponents(pathArray)
-        print(filePath)
         let session = AVAudioSession.sharedInstance()
         try! session.setCategory(AVAudioSessionCategoryPlayAndRecord)
-        
-        try! audioRecorder = AVAudioRecorder(URL: filePath!, settings: [:])
+        try! audioRecorder = AVAudioRecorder(URL: RecordSoundsViewController.recordedAudioPath!, settings: [:])
         audioRecorder.meteringEnabled = true
         audioRecorder.prepareToRecord()
         audioRecorder.record()

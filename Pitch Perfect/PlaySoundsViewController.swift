@@ -15,17 +15,13 @@ class PlaySoundsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let path = NSBundle.mainBundle().pathForResource("movie_quote", ofType: "mp3") {
-            let url = NSURL.fileURLWithPath(path)
+
             do {
-                try player = AVAudioPlayer(contentsOfURL: url)
+                try player = AVAudioPlayer(contentsOfURL: RecordSoundsViewController.recordedAudioPath!)
             } catch {
                 print("error in audio initialization")
             }
             player.enableRate = true
-        } else {
-            print("error getting path")
-        }
     }
     
     override func viewWillAppear(animated: Bool) {
