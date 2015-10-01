@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import AVFoundation
 
 class RecordSoundsViewController: UIViewController {
     @IBOutlet weak var recordingLabel: UILabel!
     @IBOutlet weak var mainAction: UIButton!
     
     var counter: Int = 0
+    var audioRecorder:AVAudioRecorder!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,18 +29,48 @@ class RecordSoundsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func recordAudio(sender: UIButton) {
-        let playbackViewControllerObject = self.storyboard?.instantiateViewControllerWithIdentifier("playback") as? PlaySoundsViewController
+    
+    func switchToView(viewIdentifier: String) {
+        let playbackViewControllerObject = self.storyboard?.instantiateViewControllerWithIdentifier(viewIdentifier) as? PlaySoundsViewController
+        self.navigationController?.pushViewController(playbackViewControllerObject!, animated: true)
+    }
+    
+    func startRecording() {
+        let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         
+        let currentDateTime = NSDate()
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd-HHmmss"
+        let recordingName = formatter.stringFromDate(currentDateTime) + ".wav"
+        let pathArray = [dirPath, recordingName]
+        let filePath = NSURL.fileURLWithPathComponents(pathArray)
+        print(filePath)
+        let session = AVAudioSession.sharedInstance()
+        try! session.setCategory(AVAudioSessionCategoryPlayAndRecord)
+        
+        try! audioRecorder = AVAudioRecorder(URL: filePath!, settings: [:])
+        audioRecorder.meteringEnabled = true
+        audioRecorder.prepareToRecord()
+        audioRecorder.record()
+    }
+
+    func stopRecording() {
+        audioRecorder.stop()
+        let session = AVAudioSession.sharedInstance()
+        try! session.setActive(false)
+    }
+    
+    @IBAction func recordAudio(sender: UIButton) {
         if (counter % 2 == 1) {
-            self.navigationController?.pushViewController(playbackViewControllerObject!, animated: true)
+            stopRecording()
+            switchToView("playback")
+        } else {
+            startRecording()
         }
         
         mainAction.setImage(UIImage(named: (counter % 2 == 0) ? "stop": "microphone"), forState: .Normal)
         recordingLabel.hidden = !recordingLabel.hidden
         counter++
-        // TODO: record the users voice
         print("pressed the button \(counter) times")
     }
 }
