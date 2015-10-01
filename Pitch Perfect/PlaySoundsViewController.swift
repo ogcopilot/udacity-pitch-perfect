@@ -11,17 +11,17 @@ import AVFoundation
 
 class PlaySoundsViewController: UIViewController {
     
-    var player:AVAudioPlayer!
+    var audioPlayer:AVAudioPlayer!
+    var receivedAudio: RecordedAudio!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-            do {
-                try player = AVAudioPlayer(contentsOfURL: RecordSoundsViewController.recordedAudioPath!)
-            } catch {
-                print("error in audio initialization")
-            }
-            player.enableRate = true
+        do {
+            try audioPlayer = AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl)
+        } catch {
+            print("error in audio initialization")
+        }
+        audioPlayer.enableRate = true
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -34,14 +34,14 @@ class PlaySoundsViewController: UIViewController {
     }
     
     func playWithSpeed(rate: Float) {
-        player.stop()
-        player.currentTime = 0.0
-        player.rate = rate
-        player.play()
+        audioPlayer.stop()
+        audioPlayer.currentTime = 0.0
+        audioPlayer.rate = rate
+        audioPlayer.play()
     }
 
     @IBAction func stopPlayback(sender: AnyObject) {
-        player.stop()
+        audioPlayer.stop()
     }
     
     @IBAction func speedUpSound(sender: AnyObject) {

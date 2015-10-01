@@ -78,11 +78,12 @@
                     <connections>
                         <outlet property="mainAction" destination="95e-o0-MKh" id="cah-D0-v3Y"/>
                         <outlet property="recordingLabel" destination="XtD-mC-jxT" id="uvb-ys-xkR"/>
+                        <segue destination="OKs-c7-YYU" kind="show" identifier="stopRecording" id="KJj-NT-8BV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="949.5" y="-109.5"/>
+            <point key="canvasLocation" x="913.5" y="-99.75"/>
         </scene>
         <!--Play Sounds View Controller-->
         <scene sceneID="ign-7n-Urt">
@@ -135,13 +136,13 @@
                                 <exclude reference="Mij-Zq-kOy"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="XJ3-AU-o7R"/>
+                                <exclude reference="Iqm-Y1-zL3"/>
+                                <exclude reference="NTV-5A-7bx"/>
                                 <exclude reference="6Uf-uo-QhG"/>
                                 <exclude reference="JFe-XC-weh"/>
                                 <exclude reference="fZo-Aa-qLC"/>
                                 <exclude reference="hN6-Op-XX3"/>
-                                <exclude reference="Iqm-Y1-zL3"/>
-                                <exclude reference="NTV-5A-7bx"/>
-                                <exclude reference="XJ3-AU-o7R"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -151,13 +152,13 @@
                                 <include reference="Mij-Zq-kOy"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="XJ3-AU-o7R"/>
+                                <exclude reference="Iqm-Y1-zL3"/>
+                                <include reference="NTV-5A-7bx"/>
                                 <include reference="6Uf-uo-QhG"/>
                                 <include reference="JFe-XC-weh"/>
                                 <include reference="fZo-Aa-qLC"/>
                                 <include reference="hN6-Op-XX3"/>
-                                <exclude reference="Iqm-Y1-zL3"/>
-                                <include reference="NTV-5A-7bx"/>
-                                <include reference="XJ3-AU-o7R"/>
                             </mask>
                         </variation>
                     </view>
@@ -165,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nSF-RH-koB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1572" y="-110"/>
+            <point key="canvasLocation" x="1689" y="-99.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wul-7A-wkI">
