@@ -104,13 +104,6 @@
                                     <action selector="slowDownSound:" destination="OKs-c7-YYU" eventType="touchUpInside" id="wdP-90-Duj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37N-po-DGz">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" image="stop playback"/>
-                                <connections>
-                                    <action selector="stopPlayback:" destination="OKs-c7-YYU" eventType="touchUpInside" id="LK9-sI-NaY"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mij-Zq-kOy">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="fast"/>
@@ -118,8 +111,18 @@
                                     <action selector="speedUpSound:" destination="OKs-c7-YYU" eventType="touchUpInside" id="z09-2u-x47"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37N-po-DGz">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="stop"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="150" y="680" width="100" height="100"/>
+                                </variation>
+                                <connections>
+                                    <action selector="stopPlayback:" destination="OKs-c7-YYU" eventType="touchUpInside" id="LK9-sI-NaY"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.56464951139999997" green="0.80368349009999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="D2P-sx-14X" firstAttribute="top" secondItem="xo2-RO-6HU" secondAttribute="bottom" constant="24" id="6Uf-uo-QhG"/>
                             <constraint firstItem="37N-po-DGz" firstAttribute="centerY" secondItem="WfY-lF-tvL" secondAttribute="centerY" id="Iqm-Y1-zL3"/>
@@ -132,8 +135,8 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="D2P-sx-14X"/>
-                                <exclude reference="37N-po-DGz"/>
                                 <exclude reference="Mij-Zq-kOy"/>
+                                <exclude reference="37N-po-DGz"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="XJ3-AU-o7R"/>
@@ -148,8 +151,8 @@
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="D2P-sx-14X"/>
-                                <include reference="37N-po-DGz"/>
                                 <include reference="Mij-Zq-kOy"/>
+                                <include reference="37N-po-DGz"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="XJ3-AU-o7R"/>
@@ -191,9 +194,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="fast" width="100" height="100"/>
-        <image name="microphone" width="100" height="100"/>
-        <image name="slow" width="100" height="100"/>
-        <image name="stop playback" width="50" height="50"/>
+        <image name="fast" width="102" height="102"/>
+        <image name="microphone" width="102" height="102"/>
+        <image name="slow" width="102" height="102"/>
+        <image name="stop" width="102" height="102"/>
     </resources>
+    <color key="tintColor" red="0.49803921568627452" green="0.75686274509803919" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
