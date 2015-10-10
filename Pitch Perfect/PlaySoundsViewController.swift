@@ -11,17 +11,20 @@ import AVFoundation
 
 class PlaySoundsViewController: UIViewController {
     
-    var audioPlayer:AVAudioPlayer!
     var receivedAudio: RecordedAudio!
+    var audioEngine: AVAudioEngine!
+    var audioFile: AVAudioFile!
+    let audioEffect = AVAudioUnitTimePitch()
+    let audioPlayer = AVAudioPlayerNode()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        do {
-            try audioPlayer = AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl)
-        } catch {
-            print("error in audio initialization")
-        }
-        audioPlayer.enableRate = true
+        audioEngine = AVAudioEngine()
+        audioFile = try! AVAudioFile(forReading: receivedAudio.filePathUrl)
+        audioEngine.attachNode(audioPlayer)
+        audioEngine.attachNode(audioEffect)
+        audioEngine.connect(audioPlayer, to: audioEffect, format: nil)
+        audioEngine.connect(audioEffect, to: audioEngine.outputNode, format: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -33,23 +36,48 @@ class PlaySoundsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func playWithSpeed(rate: Float) {
-        audioPlayer.stop()
-        audioPlayer.currentTime = 0.0
-        audioPlayer.rate = rate
+    func playAudio() {
+        audioPlayer.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        try! audioEngine.start()
         audioPlayer.play()
     }
-
-    @IBAction func stopPlayback(sender: AnyObject) {
-        audioPlayer.stop()
+    
+    func playWithPitch(pitch: Float) {
+        stopPlayback(self)
+        audioEffect.reset()
+        audioEffect.rate = 1.0
+        audioEffect.pitch = pitch
+        playAudio()
+    }
+    
+    func playWithSpeed(rate: Float) {
+        stopPlayback(self)
+        audioEffect.reset()
+        audioEffect.pitch = 0
+        audioEffect.rate = rate
+        playAudio()
+    }
+    
+    @IBAction func playInVaderVoice(sender: AnyObject) {
+        self.playWithPitch(-1000)
+    }
+    
+    @IBAction func playChipmunkAudio(sender: AnyObject) {
+        self.playWithPitch(2000)
     }
     
     @IBAction func speedUpSound(sender: AnyObject) {
-        self.playWithSpeed(2.0)
+        self.playWithSpeed(1.9)
     }
     
     @IBAction func slowDownSound(sender: AnyObject) {
         self.playWithSpeed(0.5)
+    }
+    
+    @IBAction func stopPlayback(sender: AnyObject) {
+        audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
     }
 
 }

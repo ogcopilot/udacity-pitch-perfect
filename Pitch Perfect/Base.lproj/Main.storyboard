@@ -25,7 +25,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95e-o0-MKh">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95e-o0-MKh" userLabel="mic">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="microphone"/>
                                 <connections>
@@ -97,34 +97,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2P-sx-14X">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2P-sx-14X" userLabel="snail">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="slow"/>
                                 <connections>
                                     <action selector="slowDownSound:" destination="OKs-c7-YYU" eventType="touchUpInside" id="wdP-90-Duj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37N-po-DGz">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37N-po-DGz" userLabel="stop">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="stop"/>
                                 <connections>
                                     <action selector="stopPlayback:" destination="OKs-c7-YYU" eventType="touchUpInside" id="LK9-sI-NaY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mij-Zq-kOy">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mij-Zq-kOy" userLabel="rabbit">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="fast"/>
                                 <connections>
                                     <action selector="speedUpSound:" destination="OKs-c7-YYU" eventType="touchUpInside" id="z09-2u-x47"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ifs-1R-7XG">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ifs-1R-7XG" userLabel="chipmunk">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="highpitch"/>
+                                <connections>
+                                    <action selector="playChipmunkAudio:" destination="OKs-c7-YYU" eventType="touchUpInside" id="Adk-XC-EQl"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkk-a4-zbK">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkk-a4-zbK" userLabel="vader">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="lowpitch"/>
+                                <connections>
+                                    <action selector="playInVaderVoice:" destination="OKs-c7-YYU" eventType="touchUpInside" id="Kx7-tV-6Dr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.56464951139999997" green="0.80368349009999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -149,16 +155,16 @@
                                 <exclude reference="vkk-a4-zbK"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="oVb-TL-Nm2"/>
+                                <exclude reference="QFq-MC-iTs"/>
                                 <exclude reference="Chu-gk-Z7I"/>
                                 <exclude reference="M7k-xt-yRH"/>
-                                <exclude reference="cnN-0r-HxX"/>
-                                <exclude reference="opc-lb-0Mj"/>
-                                <exclude reference="TaA-ZO-wLo"/>
-                                <exclude reference="qm4-qB-xeN"/>
                                 <exclude reference="F4p-Qt-BaG"/>
                                 <exclude reference="XEM-Mx-G9g"/>
-                                <exclude reference="QFq-MC-iTs"/>
-                                <exclude reference="oVb-TL-Nm2"/>
+                                <exclude reference="TaA-ZO-wLo"/>
+                                <exclude reference="qm4-qB-xeN"/>
+                                <exclude reference="cnN-0r-HxX"/>
+                                <exclude reference="opc-lb-0Mj"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -170,16 +176,16 @@
                                 <include reference="vkk-a4-zbK"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="oVb-TL-Nm2"/>
+                                <include reference="QFq-MC-iTs"/>
                                 <include reference="Chu-gk-Z7I"/>
                                 <include reference="M7k-xt-yRH"/>
-                                <include reference="cnN-0r-HxX"/>
-                                <include reference="opc-lb-0Mj"/>
-                                <include reference="TaA-ZO-wLo"/>
-                                <include reference="qm4-qB-xeN"/>
                                 <include reference="F4p-Qt-BaG"/>
                                 <include reference="XEM-Mx-G9g"/>
-                                <include reference="QFq-MC-iTs"/>
-                                <include reference="oVb-TL-Nm2"/>
+                                <include reference="TaA-ZO-wLo"/>
+                                <include reference="qm4-qB-xeN"/>
+                                <include reference="cnN-0r-HxX"/>
+                                <include reference="opc-lb-0Mj"/>
                             </mask>
                         </variation>
                     </view>
