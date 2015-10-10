@@ -16,6 +16,7 @@ class PlaySoundsViewController: UIViewController {
     var audioFile: AVAudioFile!
     let audioEffect = AVAudioUnitTimePitch()
     let audioPlayer = AVAudioPlayerNode()
+    let userDefaults = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,13 @@ class PlaySoundsViewController: UIViewController {
         audioEngine.attachNode(audioEffect)
         audioEngine.connect(audioPlayer, to: audioEffect, format: nil)
         audioEngine.connect(audioEffect, to: audioEngine.outputNode, format: nil)
+        var effectDefaults = Dictionary<String, AnyObject>()
+        effectDefaults["vaderEffectSetting"] = -1000
+        effectDefaults["chipmunkEffectSetting"] = 2000
+        effectDefaults["rabbitEffectSetting"] = 2.0
+        effectDefaults["snailEffectSetting"] = 0.5
+        userDefaults.registerDefaults(effectDefaults)
+        userDefaults.synchronize()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -59,19 +67,23 @@ class PlaySoundsViewController: UIViewController {
     }
     
     @IBAction func playInVaderVoice(sender: AnyObject) {
-        self.playWithPitch(-1000)
+        let defaultSetting = userDefaults.floatForKey("vaderEffectSetting")
+        self.playWithPitch(defaultSetting)
     }
     
     @IBAction func playChipmunkAudio(sender: AnyObject) {
-        self.playWithPitch(2000)
+        let defaultSetting = userDefaults.floatForKey("chipmunkEffectSetting")
+        self.playWithPitch(defaultSetting)
     }
     
     @IBAction func speedUpSound(sender: AnyObject) {
-        self.playWithSpeed(1.9)
+        let defaultSetting = userDefaults.floatForKey("rabbitEffectSetting")
+        self.playWithSpeed(defaultSetting)
     }
     
     @IBAction func slowDownSound(sender: AnyObject) {
-        self.playWithSpeed(0.5)
+        let defaultSetting = userDefaults.floatForKey("snailEffectSetting")
+        self.playWithSpeed(defaultSetting)
     }
     
     @IBAction func stopPlayback(sender: AnyObject) {

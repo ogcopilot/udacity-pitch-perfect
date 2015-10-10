@@ -10,39 +10,43 @@
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 			<key>Title</key>
-			<string>Default Effect Values</string>
+			<string>Default Effects</string>
 		</dict>
 		<dict>
+			<key>DefaultValue</key>
+			<string></string>
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>Title</key>
-			<string>Pitch Effect</string>
+			<string>Snail Effect</string>
 			<key>Key</key>
-			<string>pitchEffectSettingTitle</string>
+			<string>snailEffectSettingTitle</string>
 		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSSliderSpecifier</string>
 			<key>Key</key>
-			<string>pitchEffectSetting</string>
+			<string>snailEffectSetting</string>
 			<key>DefaultValue</key>
-			<integer>1</integer>
+			<real>0.5</real>
 			<key>MinimumValue</key>
-			<integer>-2400</integer>
+			<real>0.4</real>
 			<key>MaximumValue</key>
-			<integer>2400</integer>
+			<real>0.8</real>
 			<key>MinimumValueImage</key>
 			<string></string>
 			<key>MaximumValueImage</key>
 			<string></string>
 		</dict>
 		<dict>
+			<key>DefaultValue</key>
+			<string></string>
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>Title</key>
-			<string>Speed Effect</string>
+			<string>Rabbit Effect</string>
 			<key>Key</key>
-			<string>speedEffectSettingTitle</string>
+			<string>rabbitEffectSettingTitle</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -50,73 +54,131 @@
 			<key>Key</key>
 			<string>speedEffectSetting</string>
 			<key>DefaultValue</key>
-			<real>1</real>
+			<real>2</real>
 			<key>MinimumValue</key>
-			<real>0.03125</real>
+			<real>1.25</real>
 			<key>MaximumValue</key>
-			<integer>32</integer>
+			<real>3</real>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<string></string>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Vader Effect</string>
+			<key>Key</key>
+			<string>vaderEffectSettingTitle</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSSliderSpecifier</string>
+			<key>Key</key>
+			<string>vaderEffectSetting</string>
+			<key>DefaultValue</key>
+			<integer>-1000</integer>
+			<key>MinimumValue</key>
+			<integer>-1500</integer>
+			<key>MaximumValue</key>
+			<integer>-500</integer>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<string></string>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Chipmunk Effect</string>
+			<key>Key</key>
+			<string>chipmunkEffectSettingTitle</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSSliderSpecifier</string>
+			<key>Key</key>
+			<string>chipmunkEffectSetting</string>
+			<key>DefaultValue</key>
+			<integer>2000</integer>
+			<key>MinimumValue</key>
+			<integer>1200</integer>
+			<key>MaximumValue</key>
+			<integer>2400</integer>
 		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 			<key>Title</key>
-			<string>Credits</string>
+			<string>Icon Credits (The Noun Project)</string>
 		</dict>
 		<dict>
+			<key>DefaultValue</key>
+			<string></string>
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>Title</key>
-			<string>Microphone by Zech Nelson from the Noun Project</string>
+			<string>Microphone by Zech Nelson</string>
 			<key>Key</key>
-			<string></string>
+			<string>micCredit</string>
 		</dict>
 		<dict>
+			<key>DefaultValue</key>
+			<string></string>
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>Title</key>
-			<string>Pause by Zech Nelson from the Noun Project</string>
+			<string>Pause by Zech Nelson</string>
 			<key>Key</key>
-			<string></string>
+			<string>pauseCredit</string>
 		</dict>
 		<dict>
+			<key>DefaultValue</key>
+			<string></string>
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>Title</key>
-			<string>Stop by Daniel Simon from the Noun Project</string>
+			<string>Stop by Daniel Simon</string>
 			<key>Key</key>
-			<string></string>
+			<string>stopCredit</string>
 		</dict>
 		<dict>
+			<key>DefaultValue</key>
+			<string></string>
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>Title</key>
-			<string>Rabbit by Rémy Médard from the Noun Project</string>
+			<string>Rabbit by Rémy Médard</string>
 			<key>Key</key>
-			<string></string>
+			<string>rabbitCredit</string>
 		</dict>
 		<dict>
+			<key>DefaultValue</key>
+			<string></string>
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>Title</key>
-			<string>Squirrel by Tracy Hudak from the Noun Project</string>
+			<string>Squirrel by Tracy Hudak</string>
 			<key>Key</key>
-			<string></string>
+			<string>squirrelCredit</string>
 		</dict>
 		<dict>
+			<key>DefaultValue</key>
+			<string></string>
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>Title</key>
-			<string>Darth Vader by Rohith M S from the Noun Project</string>
+			<string>Darth Vader by Rohith M S</string>
 			<key>Key</key>
-			<string></string>
+			<string>darthCredit</string>
 		</dict>
 		<dict>
+			<key>DefaultValue</key>
+			<string></string>
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>Title</key>
 			<string>Snail Icon in the Public Domain</string>
 			<key>Key</key>
-			<string></string>
+			<string>snailCredit</string>
 		</dict>
 	</array>
 </dict>
