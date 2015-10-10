@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D418B7B1BC8DE9400F247A0 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5D418B7A1BC8DE9400F247A0 /* Settings.bundle */; settings = {ASSET_TAGS = (); }; };
 		5DB6F9D01BB8334F00B55615 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB6F9CF1BB8334F00B55615 /* AppDelegate.swift */; };
 		5DB6F9D21BB8334F00B55615 /* RecordSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB6F9D11BB8334F00B55615 /* RecordSoundsViewController.swift */; };
 		5DB6F9D51BB8334F00B55615 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DB6F9D31BB8334F00B55615 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D418B7A1BC8DE9400F247A0 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		5DB6F9CC1BB8334F00B55615 /* Pitch Perfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pitch Perfect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DB6F9CF1BB8334F00B55615 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DB6F9D11BB8334F00B55615 /* RecordSoundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSoundsViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +44,7 @@
 		5DB6F9C31BB8334F00B55615 = {
 			isa = PBXGroup;
 			children = (
+				5D418B7A1BC8DE9400F247A0 /* Settings.bundle */,
 				5DB6F9CE1BB8334F00B55615 /* Pitch Perfect */,
 				5DB6F9CD1BB8334F00B55615 /* Products */,
 			);
@@ -101,7 +104,6 @@
 				TargetAttributes = {
 					5DB6F9CB1BB8334F00B55615 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = 8EBTVETAJP;
 					};
 				};
 			};
@@ -128,6 +130,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D418B7B1BC8DE9400F247A0 /* Settings.bundle in Resources */,
 				5DB6F9DA1BB8334F00B55615 /* LaunchScreen.storyboard in Resources */,
 				5DB6F9D71BB8334F00B55615 /* Assets.xcassets in Resources */,
 				5DB6F9D51BB8334F00B55615 /* Main.storyboard in Resources */,
