@@ -5,3 +5,4 @@
  - Squirrel by Tracy Hudak from the Noun Project
  - Rabbit by Rémy Médard from the Noun Project
  - Stop by Daniel Simon from the Noun Project
+ - signal by Berkay Sargın from the Noun Project
