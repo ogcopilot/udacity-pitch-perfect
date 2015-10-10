@@ -7,12 +7,6 @@
 	<key>PreferenceSpecifiers</key>
 	<array>
 		<dict>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-			<key>Title</key>
-			<string>Default Effects</string>
-		</dict>
-		<dict>
 			<key>DefaultValue</key>
 			<string></string>
 			<key>Type</key>

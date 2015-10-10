@@ -41,9 +41,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
         if (flag) {
-            recordedAudio = RecordedAudio()
-            recordedAudio.filePathUrl = recorder.url
-            recordedAudio.title = recorder.url.lastPathComponent
+            recordedAudio = RecordedAudio(title: recorder.url.lastPathComponent!, url: recorder.url)
             self.performSegueWithIdentifier("stopRecording", sender: recordedAudio)
         } else {
             print("audio didn't finish recording correctly")
@@ -73,8 +71,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBAction func recordAudio(sender: UIButton) {
         (counter % 2 == 0) ? startRecording() : stopRecording()
         (counter % 2 == 0) ? setMainActionImage("stop") : setMainActionImage("microphone")
-        // flip flop the label
-        recordingLabel.hidden = !recordingLabel.hidden
+        recordingLabel.text = (counter % 2 == 0) ? "recording in progress" : "tap to record"
         counter++
     }
 }
