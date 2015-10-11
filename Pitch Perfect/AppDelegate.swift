@@ -12,10 +12,19 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    private let userDefaults = NSUserDefaults.standardUserDefaults()
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        var effectDefaults = Dictionary<String, AnyObject>()
+        effectDefaults["vaderEffectSetting"] = -1000
+        effectDefaults["chipmunkEffectSetting"] = 2000
+        effectDefaults["rabbitEffectSetting"] = 2.0
+        effectDefaults["snailEffectSetting"] = 0.5
+        userDefaults.registerDefaults(effectDefaults)
+        userDefaults.synchronize()
+        
         return true
     }
 
