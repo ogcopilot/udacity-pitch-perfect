@@ -34,16 +34,16 @@ class PlaySoundsViewController: UIViewController {
         audioBuffer = AVAudioPCMBuffer(PCMFormat: audioFile.processingFormat, frameCapacity: AVAudioFrameCount(audioFile.length))
         try! audioFile.readIntoBuffer(audioBuffer)
         
-        reverbEffect.loadFactoryPreset(AVAudioUnitReverbPreset.LargeChamber)
+        reverbEffect.loadFactoryPreset(.Cathedral)
         
         audioEngine.attachNode(audioPlayer)
         audioEngine.attachNode(audioEffect)
         audioEngine.attachNode(reverbEffect)
         
-        audioEngine.connect(audioPlayer, to: audioEffect, format: nil)
-        audioEngine.connect(audioEffect, to: reverbEffect, format: nil)
-        audioEngine.connect(reverbEffect, to: audioEngine.mainMixerNode, format: nil)
-        audioEngine.connect(audioEngine.mainMixerNode, to: audioEngine.outputNode, format: nil)
+        audioEngine.connect(audioPlayer, to: audioEffect, format: audioBuffer.format)
+        audioEngine.connect(audioEffect, to: reverbEffect, format: audioBuffer.format)
+        audioEngine.connect(reverbEffect, to: audioEngine.mainMixerNode, format: audioBuffer.format)
+        audioEngine.connect(audioEngine.mainMixerNode, to: audioEngine.outputNode, format: audioBuffer.format)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -51,7 +51,7 @@ class PlaySoundsViewController: UIViewController {
     }
     
     func playAudio() {
-        audioPlayer.volume = 5
+        audioPlayer.volume = 4.0
         audioPlayer.scheduleBuffer(audioBuffer, atTime: nil, options: AVAudioPlayerNodeBufferOptions.Interrupts) { () -> Void in
             dispatch_async(dispatch_get_main_queue(), {
                 self.revertToDefaultButton()
