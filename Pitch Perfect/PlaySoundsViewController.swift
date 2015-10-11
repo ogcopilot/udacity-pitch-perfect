@@ -10,18 +10,19 @@ import UIKit
 import AVFoundation
 
 class PlaySoundsViewController: UIViewController {
-    var currentButton: UIButton!
-    var currentButtonImage: UIImage!
-    var receivedAudio: RecordedAudio!
-    var audioEngine: AVAudioEngine!
-    var audioFile: AVAudioFile!
-    var audioBuffer = AVAudioPCMBuffer()
-    var isPlaying: Bool
-    let audioPlayer = AVAudioPlayerNode()
-    let audioEffect = AVAudioUnitTimePitch()
-    let reverbEffect = AVAudioUnitReverb()
-    let userDefaults = NSUserDefaults.standardUserDefaults()
-
+    internal var receivedAudio: RecordedAudio!
+    
+    private var currentButton: UIButton!
+    private var currentButtonImage: UIImage!
+    private var audioEngine: AVAudioEngine!
+    private var audioBuffer = AVAudioPCMBuffer()
+    private var isPlaying: Bool
+    
+    private let audioPlayer = AVAudioPlayerNode()
+    private let audioEffect = AVAudioUnitTimePitch()
+    private let reverbEffect = AVAudioUnitReverb()
+    private let userDefaults = NSUserDefaults.standardUserDefaults()
+    
     required init?(coder aDecoder: NSCoder) {
         isPlaying = false
         super.init(coder: aDecoder)
@@ -29,13 +30,43 @@ class PlaySoundsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        audioEngine = AVAudioEngine()
-        audioFile = try! AVAudioFile(forReading: receivedAudio.filePathUrl)
+        initializeUserSettings()
+        setupAudioBuffer()
+        setupAudioEngine()
+        setupVolumeBooster()
+        reverbEffect.loadFactoryPreset(.MediumHall)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = false
+    }
+    
+    func initializeUserSettings() {
+        var effectDefaults = Dictionary<String, AnyObject>()
+        effectDefaults["vaderEffectSetting"] = -1000
+        effectDefaults["chipmunkEffectSetting"] = 2000
+        effectDefaults["rabbitEffectSetting"] = 2.0
+        effectDefaults["snailEffectSetting"] = 0.5
+        userDefaults.registerDefaults(effectDefaults)
+        userDefaults.synchronize()
+    }
+    
+    func setupVolumeBooster() {
+        do {
+            try AVAudioSession.sharedInstance().overrideOutputAudioPort(.Speaker)
+        } catch let error as NSError {
+            print("error in overrideOutputAudioPort " + error.localizedDescription)
+        }
+    }
+    
+    func setupAudioBuffer() {
+        let audioFile = try! AVAudioFile(forReading: receivedAudio.filePathUrl)
         audioBuffer = AVAudioPCMBuffer(PCMFormat: audioFile.processingFormat, frameCapacity: AVAudioFrameCount(audioFile.length))
         try! audioFile.readIntoBuffer(audioBuffer)
-        
-        reverbEffect.loadFactoryPreset(.Cathedral)
-        
+    }
+    
+    func setupAudioEngine() {
+        audioEngine = AVAudioEngine()
         audioEngine.attachNode(audioPlayer)
         audioEngine.attachNode(audioEffect)
         audioEngine.attachNode(reverbEffect)
@@ -46,12 +77,8 @@ class PlaySoundsViewController: UIViewController {
         audioEngine.connect(audioEngine.mainMixerNode, to: audioEngine.outputNode, format: audioBuffer.format)
     }
     
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBarHidden = false
-    }
-    
     func playAudio() {
-        audioPlayer.volume = 4.0
+        audioPlayer.volume = 1.0
         audioPlayer.scheduleBuffer(audioBuffer, atTime: nil, options: AVAudioPlayerNodeBufferOptions.Interrupts) { () -> Void in
             dispatch_async(dispatch_get_main_queue(), {
                 self.revertToDefaultButton()
@@ -59,7 +86,6 @@ class PlaySoundsViewController: UIViewController {
             })
         }
         
-        audioEngine.prepare()
         try! audioEngine.start()
         isPlaying = true
         audioPlayer.play()
